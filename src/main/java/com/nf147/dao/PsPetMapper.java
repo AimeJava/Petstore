@@ -14,5 +14,7 @@ public interface PsPetMapper {
 
     List<PsPet> selectAll();
 
+    List<PsPet> selectAllPet();
+
     int updateByPrimaryKey(PsPet record);
 }

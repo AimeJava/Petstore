@@ -49,4 +49,35 @@
     from ps_pet
     where  status = #{status,jdbcType=VARCHAR}
   </select>
+  <select id="selectAllPet" resultMap="rmPet">
+    select
+       c.*,
+       i.id,
+       i.name,
+       t.id,
+       t.name
+        from ps_pet c
+       left join ps_category i on i.id = c.category_id
+        left join ps_tag t on t.id = c.tags_id
+  </select>
+  <!--<select id="selectAllCate" resultMap="rmCate">-->
+    <!--select-->
+       <!--c.*,-->
+       <!--i.id,-->
+       <!--i.name,-->
+        <!--from ps_pet c-->
+       <!--left join ps_category i on i.id = c.category_id-->
+  <!--</select>-->
+  <!--<select id="selectAllTag" resultMap="rmTag">-->
+    <!--select-->
+       <!--c.*,-->
+       <!--t.id,-->
+       <!--t.name-->
+        <!--from ps_pet c-->
+        <!--left join ps_tag t on t.id = c.tags_id-->
+  <!--</select>-->
+  <resultMap id="rmPet" type="PsPet" autoMapping="true">
+    <association property="PsCategory" resultMap="rmCate" />
+    <!--<association property="PsTag" resultMap="rmTag" />-->
+  </resultMap>
 </mapper>
