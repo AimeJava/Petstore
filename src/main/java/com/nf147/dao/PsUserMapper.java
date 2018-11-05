@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface PsUserMapper {
     int deleteByPrimaryKey(Integer id);
-    int deleteByPrimaryKey(String name);
+    int deleteByPrimaryName(String name);
     int insert(PsUser record);
 
     PsUser selectByPrimaryKey(Integer id);

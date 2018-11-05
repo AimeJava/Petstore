@@ -1,17 +1,16 @@
-package com.nf147.test;
+package com.nf147.controller;
 
 
 import com.nf147.dao.PsOrderMapper;
 import com.nf147.entity.PsOrder;
 import com.nf147.entity.PsPet;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
-@Controller
+
 public class TestStore {
 
     @Autowired
@@ -29,7 +28,7 @@ public class TestStore {
         return "redirect:/store";
     }
     //按ID查找采购订单
-    @RequestMapping(value = "/select" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/orderId" ,method = RequestMethod.GET)
     public String FindPurchaseOrderByID(int id, Model model){
         PsOrder psOrder = psOrderMapper.selectByPrimaryKey(id);
         model.addAttribute(psOrder);

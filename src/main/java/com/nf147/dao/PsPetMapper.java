@@ -6,6 +6,8 @@ import java.util.List;
 public interface PsPetMapper {
     int deleteByPrimaryKey(Integer id);
 
+    List<PsPet> selectByPrimaryStatus(String status);
+
     int insert(PsPet record);
 
     PsPet selectByPrimaryKey(Integer id);

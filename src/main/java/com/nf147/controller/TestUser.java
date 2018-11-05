@@ -1,17 +1,16 @@
-package com.nf147.test;
+package com.nf147.controller;
 
 
 import com.nf147.dao.PsUserMapper;
 import com.nf147.entity.PsUser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Controller
+
 @RequestMapping("/user")
 public class TestUser {
 
@@ -54,7 +53,7 @@ public class TestUser {
         return "redirect:/user";
     }
     //更新的用户
-    @RequestMapping(value = "/login" ,method = RequestMethod.PUT)
+    @RequestMapping(value = "/updateUser" ,method = RequestMethod.PUT)
     public String updatedUser(PsUser psUser){
         psUserMapper.updateByPrimaryKey(psUser);
         return "redirect:/user";
@@ -62,7 +61,7 @@ public class TestUser {
     //删除用户
     @RequestMapping(value = "/{username}" ,method = RequestMethod.DELETE)
     public String deleteUser(String name){
-        psUserMapper.deleteByPrimaryKey(name);
+        psUserMapper.deleteByPrimaryName(name);
         return "redirect:/user";
     }
 }

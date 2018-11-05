@@ -38,8 +38,15 @@
     from ps_pet
     where id = #{id,jdbcType=INTEGER}
   </select>
+
   <select id="selectAll" resultMap="BaseResultMap">
     select id, category_id, name, photo_urls, tags_id, status
     from ps_pet
+  </select>
+
+  <select id="selectByPrimaryStatus" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, category_id, name, photo_urls, tags_id, status
+    from ps_pet
+    where  status = #{status,jdbcType=VARCHAR}
   </select>
 </mapper>

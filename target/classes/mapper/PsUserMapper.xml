@@ -15,6 +15,10 @@
     delete from ps_user
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <delete id="deleteByPrimaryName" parameterType="java.lang.Integer">
+    delete from ps_user
+    where name = #{name,jdbcType=VARCHAR}
+  </delete>
   <insert id="insert" parameterType="com.nf147.entity.PsUser">
     <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()

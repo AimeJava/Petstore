@@ -5,33 +5,13 @@ public class PsPet {
 
     private Integer categoryId;
 
-    private PsCategory psCategory;
-
     private String name;
 
     private String photoUrls;
 
     private Integer tagsId;
 
-    private PsTag psTag;
-
     private String status;
-
-    public PsCategory getPsCategory() {
-        return psCategory;
-    }
-
-    public void setPsCategory(PsCategory psCategory) {
-        this.psCategory = psCategory;
-    }
-
-    public PsTag getPsTag() {
-        return psTag;
-    }
-
-    public void setPsTag(PsTag psTag) {
-        this.psTag = psTag;
-    }
 
     public Integer getId() {
         return id;
